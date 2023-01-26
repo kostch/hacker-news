@@ -1,5 +1,7 @@
 # Hacker news
 
+[Ссылка на проект](https://hacher-news.netlify.app/).
+
 ## Функционал
 
 ### Главная страница
