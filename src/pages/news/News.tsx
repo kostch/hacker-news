@@ -3,7 +3,7 @@ import {Link, useParams} from "react-router-dom";
 import {getArticle, getComments, getCommentsByIds, updateComments} from "../../redux/slices/actions";
 import styles from "./index.module.scss";
 import {sliceActions} from "../../redux/slices/news/slice";
-import CommentsList from "../commentsList";
+import CommentsList from "../../components/commentsList";
 import {newsType} from "../../redux/slices/news/types";
 import {useAppDispatch, useAppSelector} from "../../redux/store";
 
