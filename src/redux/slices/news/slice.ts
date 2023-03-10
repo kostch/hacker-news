@@ -3,7 +3,7 @@ import {commentsType, NewsSliceStateType, newsType} from "./types";
 
 const initialState: NewsSliceStateType = {
   news: [],
-  article: [],
+  article: null,
   comments: [],
   newsLoading: true,
 }
@@ -17,7 +17,7 @@ const slice = createSlice({
       state.news = action.payload;
       state.newsLoading = false;
     },
-    setArticle(state, action: PayloadAction<newsType[]>) {
+    setArticle(state, action: PayloadAction<newsType>) {
       state.article = action.payload;
     },
     setComments(state, action: PayloadAction<commentsType>) {
@@ -28,7 +28,7 @@ const slice = createSlice({
     },
     resetNews(state) {
       state.news = [];
-      state.article = [];
+      state.article = null;
       state.comments = [];
       state.newsLoading = true;
     },

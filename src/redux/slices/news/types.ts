@@ -23,7 +23,7 @@ export type commentsType = {
 
 export interface NewsSliceStateType {
     news: newsType[],
-    article: newsType[],
+    article: newsType | null,
     comments: commentsType[],
     newsLoading: boolean,
 }

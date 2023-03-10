@@ -31,10 +31,9 @@ export const getArticle = (id:number) => {
 };
 
 export const getComments = () => {
-  return async (dispatch: Dispatch, getState:RootState) => {
+  return async (dispatch: Dispatch, getState:() => RootState) => {
     try {
-      // @ts-ignore
-      const kidsIds:Array<number> = getState().news.article.kids;
+      const kidsIds:Array<number> = getState().news.article?.kids?? [];
       const data = await Promise.all(
         kidsIds.map((id) => getItemById(id))
       );
@@ -46,9 +45,8 @@ export const getComments = () => {
 };
 
 export const updateComments = () => {
-  return async (dispatch: Dispatch, getState:RootState) => {
+  return async (dispatch: Dispatch, getState:() => RootState) => {
     try {
-      // @ts-ignore
       const comments:commentsType[] = getState().news.comments;
       const data = await Promise.all(
         comments.map((comment) => getItemById(comment.id))

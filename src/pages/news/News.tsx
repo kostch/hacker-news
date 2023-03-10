@@ -20,7 +20,6 @@ const News = () => {
 
   useEffect(() => {
     if (getNewsInRedux !== undefined) {
-      // @ts-ignore
       dispatch(sliceActions.setArticle(getNewsInRedux));
     } else {
       dispatch(getArticle(Number(id)));
@@ -28,9 +27,7 @@ const News = () => {
   }, []);
 
   const loadComments = useCallback(() => {
-    // @ts-ignore
     if (article !== null && article.kids) {
-      // @ts-ignore
       dispatch(getCommentsByIds(article.kids));
     }
   }, [article]);
@@ -40,7 +37,6 @@ const News = () => {
   }, [loadComments])
 
   const refreshComments = useCallback(() => {
-    // @ts-ignore
     dispatch(updateComments());
   }, []);
 
